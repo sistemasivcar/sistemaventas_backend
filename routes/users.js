@@ -3,7 +3,7 @@ import routerx from "express-promise-router";
 import auth from "../middlewares/auth";
 const router = routerx();
 
-router.post("/add", users.add);
+router.post("/add", auth.verifyAdmin, users.add);
 router.get("/query", auth.verifyAdmin, users.query);
 router.get("/list", users.list);
 router.put("/update", auth.verifyAdmin, users.update);
