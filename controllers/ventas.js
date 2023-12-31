@@ -74,7 +74,7 @@ export default {
         try {
             const venta = await Venta.find()
                 .populate('user', 'name state ')
-                .populate('client', 'name state direccion email phones');
+                .populate('client', 'name state direccion email phones cuit');
 
 
             res.status(200).json(venta);

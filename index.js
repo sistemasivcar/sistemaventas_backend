@@ -1,7 +1,7 @@
 import 'dotenv/config'
 require('dotenv').config()
 require('./startup/db')();
-import logger from './startup/logger/index';
+//import logger from './startup/logger/index';
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
@@ -25,7 +25,7 @@ const port = process.env.API_PORT || 3000
 
 
 app.listen(port, () => {
-    logger.info(`Server listening on port ${port}`)
+    console.log(`Server listening on port ${port}`)
 })
 
 
